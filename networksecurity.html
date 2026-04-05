@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security | ICT Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #app {
+            position: relative;
+            z-index: 1001;
+            padding: 40px;
+            color: white;
+            max-width: 800px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 15px;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            font-weight: 300;
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-btn {
+            font-family: 'Orbitron', sans-serif;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .back-btn:hover {
+            background-color: #ff4d4d;
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="app">
+        <h1>Understanding Network Security</h1>
+        <p>Network security is all about keeping your internet connections safe from threats like hackers, viruses, and data breaches. It helps protect your personal information and ensures smooth online experiences.</p>
+
+        <h2>Key Elements of Network Security</h2>
+        <ul>
+            <li><strong>Firewalls:</strong> Act as a digital gatekeeper, blocking unwanted access to your network.</li>
+            <li><strong>Encryption:</strong> Scrambles your data, making it unreadable to anyone without the right key.</li>
+            <li><strong>Antivirus Tools:</strong> Protect your devices from harmful software that could damage files or steal information.</li>
+            <li><strong>VPNs:</strong> Create secure online connections, especially on public Wi-Fi networks.</li>
+        </ul>
+
+        <h2>Why It Matters</h2>
+        <ul>
+            <li><strong>Protects Personal Data:</strong> Stops hackers from stealing sensitive information like passwords and bank details.</li>
+            <li><strong>Keeps Devices Safe:</strong> Prevents malware from infecting your computers, phones, and other gadgets.</li>
+            <li><strong>Ensures Privacy:</strong> Keeps your online activities hidden from prying eyes.</li>
+            <li><strong>Stops Cyber Threats:</strong> Blocks attempts to disrupt or steal from your network.</li>
+        </ul>
+
+        <h2>How to Stay Secure</h2>
+        <ul>
+            <li><strong>Create Strong Passwords:</strong> Use unique and complex passwords for all your accounts.</li>
+            <li><strong>Keep Software Updated:</strong> Install updates regularly to fix any security issues.</li>
+            <li><strong>Use Security Tools:</strong> Install firewalls, antivirus programs, and VPNs for added protection.</li>
+            <li><strong>Be Aware:</strong> Avoid suspicious links and emails, and monitor your network for unusual activity.</li>
+        </ul>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import Grid1Background from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js';
+
+        const bg = Grid1Background(document.getElementById('webgl-canvas'));
+        
+        bg.grid.setColors([0xff0000, 0x330000, 0x000000]);
+        bg.grid.light1.color.set(0xff0000);
+        bg.grid.light1.intensity = 800;
+        bg.grid.light2.color.set(0x880000);
+        bg.grid.light2.intensity = 400;
+    </script>
+</body>
+</html>

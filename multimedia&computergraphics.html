@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia & Graphics | ICT Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #app {
+            position: relative;
+            z-index: 1001;
+            padding: 40px;
+            color: white;
+            max-width: 800px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 15px;
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            font-weight: 300;
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-btn {
+            font-family: 'Orbitron', sans-serif;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .back-btn:hover {
+            background-color: #ff4d4d;
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="app">
+        <h1>Multimedia and Computer Graphics</h1>
+        <p>Multimedia means using different things like text, pictures, sounds, and videos to share information. Computer graphics are images made on a computer. Both are used in movies, games, and websites to make them fun and easy to understand.</p>
+
+        <h2>What is Multimedia?</h2>
+        <p>Multimedia is when we use different types of media (like text, images, sounds, and videos) to show or explain things. You see multimedia in things like websites, videos, and advertisements.</p>
+
+        <h2>Types of Multimedia</h2>
+        <ul>
+            <li><strong>Text:</strong> The writing used in multimedia, like articles or captions.</li>
+            <li><strong>Images:</strong> Pictures or graphics that help explain or decorate the content.</li>
+            <li><strong>Audio:</strong> Sound, like music or voices, used in multimedia.</li>
+            <li><strong>Video:</strong> Moving images that help show action or explain something.</li>
+            <li><strong>Animation:</strong> Moving pictures made from images or graphics, like cartoons.</li>
+        </ul>
+
+        <h2>What are Computer Graphics?</h2>
+        <p>Computer graphics are images made using a computer. These images can be 2D (flat) or 3D (like in movies and games).</p>
+
+        <h2>Where are Computer Graphics Used?</h2>
+        <ul>
+            <li><strong>Movies and Games:</strong> To make cool effects, characters, and worlds.</li>
+            <li><strong>Design:</strong> Used by artists to create buildings or machines on a computer.</li>
+            <li><strong>Learning:</strong> Helps explain things better with pictures or videos.</li>
+            <li><strong>Ads:</strong> Companies use graphics to create logos or videos to sell things.</li>
+        </ul>
+
+        <h2>Why Multimedia and Graphics are Important</h2>
+        <ul>
+            <li><strong>It’s Fun:</strong> Multimedia makes things more interesting.</li>
+            <li><strong>Easy to Understand:</strong> Graphics can help explain hard ideas.</li>
+            <li><strong>It’s Creative:</strong> Multimedia and graphics let people create new and exciting things.</li>
+        </ul>
+
+        <h2>How to Make Good Multimedia Content</h2>
+        <ul>
+            <li><strong>Balance:</strong> Make sure text, images, and videos work well together.</li>
+            <li><strong>Keep it Simple:</strong> Don’t make it too complicated or crowded.</li>
+            <li><strong>Quality:</strong> Use good images, sounds, and videos to make it look nice.</li>
+            <li><strong>Consistency:</strong> Keep the style and design the same throughout your content.</li>
+        </ul>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import Grid1Background from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js';
+
+        const bg = Grid1Background(document.getElementById('webgl-canvas'));
+        
+        bg.grid.setColors([0xff0000, 0x330000, 0x000000]);
+        bg.grid.light1.color.set(0xff0000);
+        bg.grid.light1.intensity = 800;
+        bg.grid.light2.color.set(0x880000);
+        bg.grid.light2.intensity = 400;
+    </script>
+</body>
+</html>

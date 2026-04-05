@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Topics | ICT Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #app {
+            position: relative;
+            z-index: 1001;
+            padding: 40px;
+            color: white;
+            max-width: 800px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 15px;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 35px;
+            border-left: 4px solid #ff4d4d;
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-weight: 300;
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        strong {
+            color: #ff4d4d;
+            font-weight: 600;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back-btn {
+            font-family: 'Orbitron', sans-serif;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .back-btn:hover {
+            background-color: #ff4d4d;
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="app">
+        <h1>Advanced Topics</h1>
+        
+        <h2>1. Artificial Intelligence (AI)</h2>
+        <ul>
+            <li><strong>Definition:</strong> AI refers to machines performing tasks that require human-like intelligence such as recognizing speech, images, or making decisions.</li>
+            <li><strong>Examples:</strong> Voice assistants (like Siri), self-driving cars, and recommendation systems (like those on Netflix).</li>
+            <li><strong>Importance:</strong>   
+                <ul>
+                    <li>AI automates tasks, saving time and increasing efficiency.</li>
+                    <li>It is used in healthcare to help diagnose diseases, in finance to detect fraud, and in many other industries.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>2. Data Science</h2>
+        <ul>
+            <li><strong>Definition:</strong> Data Science is the process of analyzing large amounts of data to find patterns and make decisions.</li>
+            <li><strong>Tools Used:</strong> Statistics, machine learning, and data visualization to interpret complex data.</li>
+            <li><strong>Importance:</strong> 
+                <ul>
+                    <li>Helps businesses make data-driven decisions for better marketing and sales strategies.</li>
+                    <li>Used to predict trends, improve customer experiences, and optimize business operations.</li>
+                    <li>For example, Netflix uses data science to recommend shows and movies to users based on their preferences.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cloud Computing</h2>
+        <ul>
+            <li><strong>Definition:</strong> Cloud computing allows users to store and access data over the internet instead of using a local device or server.</li>
+            <li><strong>Examples:</strong> Google Drive, Amazon Web Services (AWS), Microsoft Azure.</li>
+            <li><strong>Importance:</strong> 
+                <ul>
+                    <li>Users can access their files and data from anywhere, improving flexibility and collaboration.</li>
+                    <li>Businesses save costs by eliminating the need for expensive hardware and servers.</li>
+                    <li>Data is safely backed up, ensuring availability even if local devices fail.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import Grid1Background from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js';
+
+        const bg = Grid1Background(document.getElementById('webgl-canvas'));
+        
+        bg.grid.setColors([0xff0000, 0x330000, 0x000000]);
+        bg.grid.light1.color.set(0xff0000);
+        bg.grid.light1.intensity = 800;
+        bg.grid.light2.color.set(0x880000);
+        bg.grid.light2.intensity = 400;
+    </script>
+</body>
+</html>

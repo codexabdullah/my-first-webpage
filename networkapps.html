@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Applications | ICT Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #app {
+            position: relative;
+            z-index: 1001;
+            padding: 40px;
+            color: white;
+            max-width: 800px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 15px;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            font-weight: 300;
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-btn {
+            font-family: 'Orbitron', sans-serif;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .back-btn:hover {
+            background-color: #ff4d4d;
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="app">
+        <h1>What Are Network Applications?</h1>
+        <p>Network applications are programs that use the internet or local networks to help us share information, connect with others, and complete tasks easily.</p>
+
+        <h2>Common Types of Network Applications</h2>
+        <ul>
+            <li><strong>Chat Apps:</strong> Apps like WhatsApp and Messenger let us send messages, make calls, and share media with friends and family.</li>
+            <li><strong>File Sharing Tools:</strong> Use apps like Google Drive to store and share files with anyone, anywhere.</li>
+            <li><strong>Web Browsers:</strong> Access websites, search for information, or watch videos with browsers like Chrome or Safari.</li>
+            <li><strong>Streaming Platforms:</strong> Enjoy music and videos on apps like Spotify and Netflix.</li>
+            <li><strong>Online Gaming:</strong> Play multiplayer games like Minecraft or Fortnite with friends around the world.</li>
+        </ul>
+
+        <h2>Why We Use Network Applications</h2>
+        <ul>
+            <li><strong>Stay Connected:</strong> Chat, call, or share updates with people no matter where they are.</li>
+            <li><strong>Access Information:</strong> Quickly find answers to questions or learn new skills online.</li>
+            <li><strong>Entertainment:</strong> Watch shows, listen to music, or play games whenever you want.</li>
+            <li><strong>Work and Study:</strong> Use tools like Zoom or Google Meet to work or attend classes online.</li>
+        </ul>
+
+        <h2>The Benefits of Network Applications</h2>
+        <ul>
+            <li><strong>Save Time:</strong> Quickly send messages, files, or complete tasks without delays.</li>
+            <li><strong>Easy Collaboration:</strong> Work with others remotely using shared tools and apps.</li>
+            <li><strong>Global Reach:</strong> Connect with people, information, and services worldwide.</li>
+        </ul>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import Grid1Background from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js';
+
+        const bg = Grid1Background(document.getElementById('webgl-canvas'));
+        
+        bg.grid.setColors([0xff0000, 0x330000, 0x000000]);
+        bg.grid.light1.color.set(0xff0000);
+        bg.grid.light1.intensity = 800;
+        bg.grid.light2.color.set(0x880000);
+        bg.grid.light2.intensity = 400;
+    </script>
+</body>
+</html>

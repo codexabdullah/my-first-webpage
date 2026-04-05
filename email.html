@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email | ICT Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        #app {
+            position: relative;
+            z-index: 1001;
+            padding: 40px;
+            color: white;
+            max-width: 800px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 15px;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            font-weight: 300;
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-btn {
+            font-family: 'Orbitron', sans-serif;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .back-btn:hover {
+            background-color: #ff4d4d;
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="app">
+        <h1>What is Email?</h1>
+        <p>Email, or electronic mail, is a fast and easy way to send messages, files, and documents over the internet. It's widely used for personal and professional communication.</p>
+
+        <h2>How Does Email Work?</h2>
+        <p>Emails are sent from your account to someone else's using the internet. Once sent, the message is stored in the recipient's inbox, ready for them to read and reply.</p>
+
+        <h2>Main Parts of an Email</h2>
+        <ul>
+            <li><strong>Sender:</strong> The person writing and sending the email.</li>
+            <li><strong>Recipient:</strong> The person receiving the email.</li>
+            <li><strong>Subject:</strong> A short title summarizing the email's purpose.</li>
+            <li><strong>Body:</strong> The main message or content of the email.</li>
+            <li><strong>Attachments:</strong> Extra files, like documents or pictures, sent with the email.</li>
+        </ul>
+
+        <h2>Why Use Email?</h2>
+        <ul>
+            <li><strong>Fast Communication:</strong> Messages are delivered almost instantly.</li>
+            <li><strong>Free to Use:</strong> Send unlimited messages without any postage costs.</li>
+            <li><strong>Share Files Easily:</strong> Attach and share important documents or images.</li>
+            <li><strong>Keeps Records:</strong> Emails automatically save your conversations for future reference.</li>
+        </ul>
+
+        <h2>Stay Safe While Using Email</h2>
+        <ul>
+            <li><strong>Create Strong Passwords:</strong> Protect your email account with secure passwords.</li>
+            <li><strong>Avoid Scams:</strong> Do not click on unknown links or open suspicious attachments.</li>
+            <li><strong>Use Two-Factor Authentication:</strong> Add extra security by requiring a code along with your password.</li>
+        </ul>
+
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">⬅ Back to Home</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import Grid1Background from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js';
+
+        const bg = Grid1Background(document.getElementById('webgl-canvas'));
+        
+        bg.grid.setColors([0xff0000, 0x330000, 0x000000]);
+        bg.grid.light1.color.set(0xff0000);
+        bg.grid.light1.intensity = 800;
+        bg.grid.light2.color.set(0x880000);
+        bg.grid.light2.intensity = 400;
+    </script>
+</body>
+</html>
