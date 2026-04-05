@@ -28,4 +28,4 @@ A comprehensive multi-page educational platform based on ICT topics, developed a
 2. Open `index.html` in any modern web browser.
 
 ## Author
-Abdullah Mughal (AimSoftwareStudios)
+Abdullah Mughal
